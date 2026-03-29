@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import Icon from "@/components/ui/icon";
 
-const HERO_IMG = "https://cdn.poehali.dev/projects/8ed836fa-bf72-4b56-8529-43138398c3cc/files/9dc25710-4c28-4b7f-bcbb-46bab3535875.jpg";
+const HERO_IMG = "https://cdn.poehali.dev/projects/8ed836fa-bf72-4b56-8529-43138398c3cc/files/3891cd63-de78-44be-9742-899349ea73e6.jpg";
 const HERBS_IMG = "https://cdn.poehali.dev/projects/8ed836fa-bf72-4b56-8529-43138398c3cc/files/07e01304-ca87-4a88-ae3e-83a1105b0af7.jpg";
-const INTERIOR_IMG = "https://cdn.poehali.dev/projects/8ed836fa-bf72-4b56-8529-43138398c3cc/files/f065ad94-ed8f-4e0b-bc52-47dc4a1d0e59.jpg";
+const INTERIOR_IMG = "https://cdn.poehali.dev/projects/8ed836fa-bf72-4b56-8529-43138398c3cc/files/ba85d80d-3ea9-4f87-b0a6-345cae66c8e7.jpg";
 
 const RUNES = ["ᚠ", "ᚢ", "ᚦ", "ᚨ", "ᚱ", "ᚲ", "ᚷ", "ᚹ", "ᚺ", "ᚾ", "ᛁ", "ᛃ", "ᛇ", "ᛈ", "ᛉ", "ᛊ", "ᛏ", "ᛒ", "ᛖ", "ᛗ", "ᛚ", "ᛜ", "ᛞ", "ᛟ"];
 

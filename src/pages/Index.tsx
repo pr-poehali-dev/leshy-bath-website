@@ -44,13 +44,6 @@ const ROOMS = [
     price: "2500 ₽/час",
     img: HERO_IMG,
   },
-  {
-    name: "Велесова нора",
-    desc: "Банный грот — полутёмное таинственное пространство. Каменные стены, очаг, ритуальная атмосфера.",
-    features: ["до 3 чел.", "парная 85°С", "настои трав", "особый декор"],
-    price: "3000 ₽/час",
-    img: HERBS_IMG,
-  },
 ];
 
 const SCHEDULE = [
@@ -479,7 +472,7 @@ export default function Index() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "3rem" }}>
             <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
               {[
-                { icon: "MapPin", title: "Адрес", text: "Московская обл., Сергиево-Посадский р-н, деревня Лесная, д. 1" },
+                { icon: "MapPin", title: "Адрес", text: "Владимирская область, округ Муром, деревня Макаровка, д. 3 · 10 минут езды от центра города" },
                 { icon: "Phone", title: "Телефон", text: "+7 (XXX) XXX-XX-XX" },
                 { icon: "Clock", title: "Режим работы", text: "Ежедневно с 8:00 до 03:00" },
                 { icon: "MessageCircle", title: "Telegram", text: "@bani_leshego" },

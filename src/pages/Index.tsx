@@ -156,8 +156,9 @@ export default function Index() {
         display: "flex", alignItems: "center",
       }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 1.5rem", width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <button onClick={() => scrollTo("hero")} style={{ fontFamily: "'Cormorant SC', serif", color: "#C8860A", fontSize: "1.1rem", letterSpacing: "0.15em", background: "none", border: "none", cursor: "pointer" }}>
-            ᛒ БАНИ ЛЕШЕГО
+          <button onClick={() => scrollTo("hero")} style={{ fontFamily: "'Cormorant SC', serif", color: "#C8860A", fontSize: "1.1rem", letterSpacing: "0.15em", background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: "0.5rem" }}>
+            <img src="https://cdn.poehali.dev/files/942fb2ff-290e-4289-980c-8e5d967e89e9.jpg" alt="Леший" style={{ height: 38, width: 38, objectFit: "contain", filter: "sepia(1) saturate(2) hue-rotate(5deg) brightness(0.85)" }} />
+            БАНИ ЛЕШЕГО
           </button>
           <div className="hidden md:flex" style={{ gap: "1.5rem" }}>
             {NAV_ITEMS.map(({ id, label }) => (

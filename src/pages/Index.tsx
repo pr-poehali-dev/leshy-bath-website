@@ -509,6 +509,7 @@ export default function Index() {
 
       {/* ══ FOOTER ══ */}
       <footer style={{ padding: "2.5rem 1.5rem", textAlign: "center", borderTop: "1px solid rgba(200,134,10,0.12)", background: "#080605" }}>
+        <img src="https://cdn.poehali.dev/files/2da304c4-6104-4f0a-b592-4e79859b9677.jpg" alt="Бани Лешего" style={{ height: 80, width: 80, objectFit: "contain", filter: "sepia(1) saturate(1.5) hue-rotate(5deg) brightness(0.7)", opacity: 0.7, marginBottom: "1rem" }} />
         <div style={{ fontFamily: "'Cormorant SC', serif", color: "#C8860A", fontSize: "2rem", letterSpacing: "0.3em", opacity: 0.35, marginBottom: "0.75rem" }}>
           ᛒᚨᚾᛁ · ᛚᛖᛊᛖᚷᛟ
         </div>

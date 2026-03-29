@@ -4,89 +4,54 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Славянская палитра: тёмный лес, янтарь, огонь */
+    --background: 25 15% 6%;
+    --foreground: 38 60% 88%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 25 18% 9%;
+    --card-foreground: 38 55% 85%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 25 18% 9%;
+    --popover-foreground: 38 55% 85%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 35 80% 50%;
+    --primary-foreground: 25 15% 6%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 25 20% 14%;
+    --secondary-foreground: 38 50% 80%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 25 15% 12%;
+    --muted-foreground: 35 30% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 14 70% 38%;
+    --accent-foreground: 38 60% 90%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 38 60% 90%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 30 25% 18%;
+    --input: 30 25% 15%;
+    --ring: 35 80% 50%;
+
+    --radius: 0.25rem;
+
+    /* Кастомные переменные */
+    --amber: #c8860a;
+    --amber-light: #e8a020;
+    --amber-pale: #f0c060;
+    --forest: #1a2a15;
+    --bark: #3d2b1a;
+    --ember: #8b2500;
+    --smoke: rgba(200, 160, 80, 0.06);
+
+    --sidebar-background: 25 15% 6%;
+    --sidebar-foreground: 38 55% 85%;
+    --sidebar-primary: 35 80% 50%;
+    --sidebar-primary-foreground: 25 15% 6%;
+    --sidebar-accent: 25 20% 14%;
+    --sidebar-accent-foreground: 38 50% 80%;
+    --sidebar-border: 30 25% 18%;
+    --sidebar-ring: 35 80% 50%;
   }
 }
 
@@ -97,5 +62,205 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: "Merriweather", serif;
+    background-color: #0f0a06;
   }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Cormorant SC", serif;
+  }
+}
+
+/* Рунический орнамент — разделитель */
+.rune-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--amber);
+  opacity: 0.6;
+}
+.rune-divider::before,
+.rune-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--amber), transparent);
+}
+
+/* Плавное появление секций */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+@keyframes drift {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+@keyframes ember-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 20px rgba(200, 134, 10, 0.3),
+      0 0 40px rgba(200, 134, 10, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 35px rgba(200, 134, 10, 0.5),
+      0 0 70px rgba(200, 134, 10, 0.2);
+  }
+}
+@keyframes smoke-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-120px) scale(2.5);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+.animate-flicker {
+  animation: flicker 3s ease-in-out infinite;
+}
+.animate-drift {
+  animation: drift 6s ease-in-out infinite;
+}
+.animate-ember-glow {
+  animation: ember-glow 2.5s ease-in-out infinite;
+}
+
+/* Текстура дерева поверх фона */
+.wood-texture {
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(200, 134, 10, 0.015) 2px,
+      rgba(200, 134, 10, 0.015) 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 40px,
+      rgba(0, 0, 0, 0.1) 40px,
+      rgba(0, 0, 0, 0.1) 41px
+    );
+}
+
+/* Свечение янтаря на кнопках */
+.btn-amber {
+  background: linear-gradient(135deg, #c8860a, #e8a020);
+  color: #0f0a06;
+  font-family: "Cormorant SC", serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border: 1px solid rgba(200, 134, 10, 0.4);
+  transition: all 0.3s ease;
+  text-shadow: none;
+}
+.btn-amber:hover {
+  background: linear-gradient(135deg, #e8a020, #f0c060);
+  box-shadow: 0 0 30px rgba(200, 134, 10, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Рамка с рунами */
+.rune-border {
+  border: 1px solid rgba(200, 134, 10, 0.3);
+  position: relative;
+}
+.rune-border::before,
+.rune-border::after {
+  content: "᛭";
+  position: absolute;
+  color: var(--amber);
+  font-size: 1.2rem;
+  opacity: 0.5;
+}
+.rune-border::before {
+  top: -0.7rem;
+  left: 1rem;
+}
+.rune-border::after {
+  bottom: -0.7rem;
+  right: 1rem;
+}
+
+/* Скролл */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0f0a06;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(200, 134, 10, 0.4);
+  border-radius: 3px;
+}
+
+/* Навигация — активная ссылка */
+.nav-link {
+  font-family: "Cormorant SC", serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  color: rgba(240, 192, 96, 0.7);
+  transition: color 0.3s;
+  cursor: pointer;
+}
+.nav-link:hover {
+  color: #f0c060;
+}
+
+/* Карточки */
+.slavic-card {
+  background: linear-gradient(135deg, #141008, #1a1208);
+  border: 1px solid rgba(200, 134, 10, 0.2);
+  transition: all 0.4s ease;
+}
+.slavic-card:hover {
+  border-color: rgba(200, 134, 10, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 40px rgba(200, 134, 10, 0.15);
+}
+
+/* Параллакс-оверлей для фото */
+.hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(15, 10, 6, 0.4) 0%,
+    rgba(15, 10, 6, 0.2) 40%,
+    rgba(15, 10, 6, 0.7) 80%,
+    rgba(15, 10, 6, 1) 100%
+  );
 }

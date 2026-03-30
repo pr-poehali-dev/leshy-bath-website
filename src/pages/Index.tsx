@@ -19,13 +19,13 @@ const NAV_ITEMS = [
 ];
 
 const SERVICES = [
-  { icon: "Flame", title: "Баня медовая", desc: "Жар берёзовых дров, каменная печь-каменка. Температура до 90°С. Веники из берёзы, дуба и можжевельника.", price: "от 2000 ₽/час · заказ от 3 часов" },
+  { icon: "Flame", title: "Баня медовая", desc: "Жар берёзовых дров, каменная печь-каменка. Температура до 75°С. Веники из берёзы, дуба и можжевельника.", price: "от 2000 ₽/час · заказ от 3 часов" },
   { icon: "Droplets", title: "Купель с ключевой водой", desc: "Ледяная купель из родниковой воды. Закаляет дух и тело, пробуждает силу предков.", price: "включено" },
   { icon: "Wind", title: "Пар-мастер", desc: "Опытный парильщик проведёт старинный обряд парения. Травяные масла, целебный пар.", price: "от 3000 ₽/час" },
   { icon: "Star", title: "Программа парения", desc: "Фирменная программа 5–6 часов: несколько сеансов парения, отдых с травяными сборами, домашним квасом и морсами ручного приготовления, восстановительный сон с ароматерапией.", price: "от 12 000 ₽" },
-  { icon: "CircleDot", title: "Деревянный чан на дровах", desc: "Купание в деревянном чане, нагретом на живом огне. Расслабляет тело и согревает душу.", price: "5 000 ₽ · на время аренды бани" },
+  { icon: "CircleDot", title: "Чан на дровах", desc: "Купание в чане, с отваром целебных трав и фруктов, нагретом на живом огне. Расслабляет тело и согревает душу.", price: "5 000 ₽ · на время аренды бани" },
   { icon: "Trees", title: "Открытая зона", desc: "Беседка и мангальная зона. Отдых на свежем воздухе, шашлык, огонь — всё для компании.", price: "от 2 000 ₽ · на время аренды бани" },
-  { icon: "Leaf", title: "Напитки", desc: "Морс, чай с самоваром, домашний квас — всё приготовлено вручную из натуральных ингредиентов.", price: "от 600 ₽" },
+  { icon: "Leaf", title: "Напитки", desc: "Морс, чай с самоваром, домашний квас — всё приготовлено вручную из натуральных ингредиентов.", price: "" },
   { icon: "Moon", title: "Ночная баня", desc: "Особая баня под звёздами. Тишина, звук леса, огонь в темноте. Только для двоих.", price: "от 5000 ₽" },
 ];
 
@@ -466,8 +466,10 @@ export default function Index() {
       </section>
 
       {/* ══ КОНТАКТЫ ══ */}
-      <section id="contacts" style={{ padding: "6rem 1.5rem" }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+      <section id="contacts" style={{ padding: "6rem 1.5rem", position: "relative", overflow: "hidden" }}>
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "url(https://cdn.poehali.dev/projects/8ed836fa-bf72-4b56-8529-43138398c3cc/files/08f1dae3-1890-4841-b763-48e2d180e585.jpg)", backgroundSize: "cover", backgroundPosition: "center top", opacity: 0.18, zIndex: 0 }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(10,8,4,0.85) 40%, rgba(10,8,4,0.5))", zIndex: 1 }} />
+        <div style={{ maxWidth: 1000, margin: "0 auto", position: "relative", zIndex: 2 }}>
           <SectionTitle sub="Найдите нас в лесу">Контакты</SectionTitle>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "3rem" }}>
             <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>

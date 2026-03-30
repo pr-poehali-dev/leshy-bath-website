@@ -32,15 +32,22 @@ const SERVICES = [
 const ROOMS = [
   {
     name: "Изба Лешего",
-    desc: "Просторная рубленая баня на 8 человек. Два яруса полок, огромная каменка, предбанник с дубовыми столами.",
+    desc: "Просторная рубленая баня на 8 человек. Предбанник с дубовыми столами, купель, мангал.",
     features: ["до 8 чел.", "парная 90°С", "купель", "предбанник", "мангал"],
     price: "4000 ₽/час",
     img: INTERIOR_IMG,
   },
   {
+    name: "Сердце бани",
+    desc: "Современная печь с плавной подачей пара. Лежанки из кедра с покрытием из свежего сена. Предбанник с дубовыми столами.",
+    features: ["до 6 чел.", "парная 75°С", "кедровые лежанки", "предбанник"],
+    price: "3000 ₽/час",
+    img: INTERIOR_IMG,
+  },
+  {
     name: "Берегиня",
-    desc: "Уютная баня для малых компаний. Мягкий жар, берёзовые стены, лежанка из кедра.",
-    features: ["до 4 чел.", "парная 80°С", "бочка", "чайная зона"],
+    desc: "Уютная баня для малых компаний. Мягкий жар, лежанки из кедра с покрытием из свежего сена.",
+    features: ["до 4 чел.", "парная 75°С", "бочка", "чайная зона"],
     price: "2500 ₽/час",
     img: HERO_IMG,
   },
@@ -467,8 +474,8 @@ export default function Index() {
 
       {/* ══ КОНТАКТЫ ══ */}
       <section id="contacts" style={{ padding: "6rem 1.5rem", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "url(https://cdn.poehali.dev/projects/8ed836fa-bf72-4b56-8529-43138398c3cc/files/08f1dae3-1890-4841-b763-48e2d180e585.jpg)", backgroundSize: "cover", backgroundPosition: "center top", opacity: 0.18, zIndex: 0 }} />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(10,8,4,0.85) 40%, rgba(10,8,4,0.5))", zIndex: 1 }} />
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "url(https://cdn.poehali.dev/projects/8ed836fa-bf72-4b56-8529-43138398c3cc/files/08f1dae3-1890-4841-b763-48e2d180e585.jpg)", backgroundSize: "cover", backgroundPosition: "center top", opacity: 0.45, zIndex: 0 }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(10,8,4,0.6) 30%, rgba(10,8,4,0.25))", zIndex: 1 }} />
         <div style={{ maxWidth: 1000, margin: "0 auto", position: "relative", zIndex: 2 }}>
           <SectionTitle sub="Найдите нас в лесу">Контакты</SectionTitle>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "3rem" }}>

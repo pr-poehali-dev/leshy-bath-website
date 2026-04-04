@@ -482,9 +482,9 @@ export default function Index() {
             <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
               {[
                 { icon: "MapPin", title: "Адрес", text: "Владимирская область, округ Муром, деревня Макаровка, д. 3 · 10 минут езды от центра города" },
-                { icon: "Phone", title: "Телефон", text: "+7 (XXX) XXX-XX-XX" },
+                { icon: "Phone", title: "Телефон", text: "+7 (920) 626-04-61" },
                 { icon: "Clock", title: "Режим работы", text: "Ежедневно с 8:00 до 03:00" },
-                { icon: "MessageCircle", title: "Telegram", text: "@bani_leshego" },
+                { icon: "MessageCircle", title: "Telegram", text: "+7 (901) 192-66-87" },
               ].map((c, i) => (
                 <div key={i} style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
                   <div style={{ width: 40, height: 40, borderRadius: 2, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, background: "rgba(200,134,10,0.08)", border: "1px solid rgba(200,134,10,0.22)" }}>

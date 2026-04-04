@@ -111,7 +111,28 @@ export default function Index() {
   const [activeSection, setActiveSection] = useState("hero");
   const [menuOpen, setMenuOpen] = useState(false);
   const [bookingForm, setBookingForm] = useState({ name: "", phone: "", room: "", date: "", time: "" });
+  const [bookingStatus, setBookingStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [contactForm, setContactForm] = useState({ name: "", phone: "", message: "" });
+
+  const handleBooking = async () => {
+    if (!bookingForm.name || !bookingForm.phone) return;
+    setBookingStatus("loading");
+    try {
+      const res = await fetch("https://functions.poehali.dev/795c433c-5723-4108-949e-8d17b116da9d", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(bookingForm),
+      });
+      if (res.ok) {
+        setBookingStatus("success");
+        setBookingForm({ name: "", phone: "", room: "", date: "", time: "" });
+      } else {
+        setBookingStatus("error");
+      }
+    } catch {
+      setBookingStatus("error");
+    }
+  };
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -461,12 +482,29 @@ export default function Index() {
                 </div>
               </div>
 
-              <button className="btn-amber" style={{ width: "100%", padding: "1rem", fontSize: "0.95rem", borderRadius: 2, marginTop: "0.5rem" }}>
-                Отправить заявку на бронирование
+              <button
+                className="btn-amber"
+                style={{ width: "100%", padding: "1rem", fontSize: "0.95rem", borderRadius: 2, marginTop: "0.5rem", opacity: bookingStatus === "loading" ? 0.7 : 1 }}
+                onClick={handleBooking}
+                disabled={bookingStatus === "loading"}
+              >
+                {bookingStatus === "loading" ? "Отправка..." : "Отправить заявку на бронирование"}
               </button>
-              <p style={{ fontFamily: "'Merriweather', serif", color: "rgba(120,80,16,0.6)", fontSize: "0.75rem", textAlign: "center", fontStyle: "italic" }}>
-                Мы свяжемся с вами в течение часа для подтверждения
-              </p>
+              {bookingStatus === "success" && (
+                <p style={{ fontFamily: "'Merriweather', serif", color: "#7ab87a", fontSize: "0.85rem", textAlign: "center" }}>
+                  Заявка отправлена! Мы свяжемся с вами в течение часа.
+                </p>
+              )}
+              {bookingStatus === "error" && (
+                <p style={{ fontFamily: "'Merriweather', serif", color: "#c87a7a", fontSize: "0.85rem", textAlign: "center" }}>
+                  Ошибка отправки. Позвоните нам напрямую: +7 (920) 626-04-61
+                </p>
+              )}
+              {bookingStatus === "idle" && (
+                <p style={{ fontFamily: "'Merriweather', serif", color: "rgba(120,80,16,0.6)", fontSize: "0.75rem", textAlign: "center", fontStyle: "italic" }}>
+                  Мы свяжемся с вами в течение часа для подтверждения
+                </p>
+              )}
             </div>
           </div>
         </div>

@@ -31,8 +31,8 @@ def handler(event: dict, context) -> dict:
             "body": json.dumps({"error": "Имя и телефон обязательны"}, ensure_ascii=False),
         }
 
-    to_email = "lechey90@mail.ru"
-    from_email = "lechey90@mail.ru"
+    to_email = "lechei90@mail.ru"
+    from_email = "lechei90@mail.ru"
     smtp_password = os.environ["SMTP_PASSWORD"]
 
     subject = f"Новая заявка на бронирование — {room or 'не указано'}"
